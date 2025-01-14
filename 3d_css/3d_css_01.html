@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .world {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /*viewport 사용하면 창크기 줄일 때 같이 줄어듦*/
+            width: 80vw;
+            /*vw: 창크기 100%가 100vw*/
+            height: 80vh;
+            background-color: wheat;
+            /* perspective: 300px; */
+        }
+
+        .card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 150px;
+            border-radius: 0.5em;
+            /*em: 현재 엘리먼트의 폰트 사이즈를 기준으로 절반, 폰트사이즈에 비례 하도록 함*/
+            font-size: 1.5rem;
+            /*rem: root인 html 기준*/
+            background: red;
+            margin: 1em;
+            /* transform: rotateY(30deg); */
+            transform: perspective(500px) rotateY(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="world">
+        <div class="card">CARD</div>
+        <div class="card">CARD</div>
+        <div class="card">CARD</div>
+    </div>
+    <p>world를 3d 공간으로 해야 card를 회전시켰을때 회전한 느낌이 남</p>
+    <ul>
+        <li>
+            perspective: 1000px 원근감
+        </li>
+        <li>
+            => 요소가 예를 들어 3개일 때 부모 요소에 perspective를 주면 3개 모두 같은 각도로 돌아가지 x
+        </li>
+        <li>
+            자식 요소에
+        </li>
+    </ul>
+</body>
+
+</html>

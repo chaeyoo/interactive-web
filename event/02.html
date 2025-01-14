@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .stage {
+            position: relative;
+            background-color: blueviolet;
+            width: 100vw;
+            height: 75vw;
+        }
+
+        @keyframes moving {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(85vw, -50vw);
+            }
+        }
+
+        @keyframes square {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            25% {
+                transform: translate(0, 50vw);
+            }
+
+            50% {
+                transform: translate(80vw, 50vw);
+            }
+
+            75% {
+                transform: translate(80vw, 0);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        @keyframes wave {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            25% {
+                transform: translate(15vw, -25vw);
+            }
+
+            50% {
+                transform: translate(30vw, 25vw);
+            }
+
+            75% {
+                transform: translate(45vw, -25vw);
+            }
+
+            100% {
+                transform: translate(60vw, 0);
+            }
+        }
+
+        .ilbuni {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: contain;
+            background-color: rgba(172, 154, 255, 0.1);
+            border-radius: 30%;
+        }
+
+        .ilbuni.a {
+            background-image: url('../images/ilbuni_1.png');
+            left: 3%;
+            bottom: 5%;
+            animation: moving alternate infinite linear 1.5s;
+        }
+
+        .ilbuni.b {
+            background-image: url('../images/ilbuni_2.png');
+            left: 3%;
+            top: 3%;
+            animation-duration: 4s;
+            animation: square alternate infinite linear 1.5s;
+        }
+
+        .ilbuni.c {
+            background-image: url('../images/ilbuni_3.png');
+            left: 5%;
+            bottom: 50%;
+            animation-duration: 2s;
+            animation: wave 3s infinite alternate ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="ilbuni a"></div>
+        <div class="ilbuni b"></div>
+        <div class="ilbuni c"></div>
+    </div>
+
+    <script>
+        (function () {
+            const ilbunies = document.querySelectorAll('.ilbuni');
+            const stage = document.querySelector('.stage');
+
+            function clickHandler(e) {
+                // 1) for문으로 이벤트 객체 연결했을 때
+                // console.log(this)
+                // console.log(e.currentTarget)
+                // stage.removeChild(this)
+                // this.parentNode.removeChild(this);
+
+                // 2) 이벤트 위임
+                if (e.target.classList.contains("ilbuni")) {
+                    stage.removeChild(e.target)
+                }
+            }
+
+            // 1) 요소마다 이벤트 걸어주면 성능에 좋지 않음
+            // for (let i = 0; i < ilbunies.length; i++) {
+            //     ilbunies[i].addEventListener('click', clickHandler);
+            // }
+
+            // 2) 이벤트 위임
+            // 데이터 수십개가 로드 될때마다 하나하나 클릭 이벤트를 안걸어줘도 됨
+            // 부모에 클릭이벤트 걸려있고 나는 타겟만 조사하면 됨 
+            // 일부니 마다 이벤트를 연결하는게 아니라 부모인 stage에 이벤트를 위임
+            // 동적으로 생기는 엘리먼트들에 사용하기 유용 
+            stage.addEventListener('click', clickHandler)
+        })();
+    </script>
+</body>
+
+</html>

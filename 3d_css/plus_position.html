@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .world {
+            position: relative;
+            width: 60vw;
+            height: 60vh;
+            background: #fff000;
+        }
+
+        .card {
+            position: absolute;
+            width: 100px;
+            height: 150px;
+            background-color: red;
+            left: 50%;
+            top: 50%;
+            /*음수마진*/
+            margin-left: -50px;
+            margin-top: -75px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="world">
+        <div class="card">
+
+        </div>
+    </div>
+    <ul>
+        <li>world에 position: relative를 주고 card에 position: absolute를 주고 left: 50%, top: 50%로 하면 card의 왼쪽 꼭지점이 world의 정중앙에
+            옴</li>
+        <li>
+            card의 너비의 반만큼 왼쪽으로 땡기고
+            <br />
+            card의 높이의 반만큼 위로 땡기면 중앙정렬
+            <br />
+            음수마진으로 조절
+        </li>
+
+    </ul>
+</body>
+
+</html>

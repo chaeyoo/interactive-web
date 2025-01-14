@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(32, 32, 32);
+            color: rgb(143, 143, 143);
+        }
+
+        .box-container {
+            display: flex;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 2px solid rgb(196, 196, 196);
+            background: rgb(255, 255, 0, 0.7);
+            transition: 1s;
+            /*수치값을 변화시킬때 서서히!*/
+            /* transition-delay: 2s; */
+        }
+
+        .box:hover {
+            transform: scale(2);
+            background-color: yellowgreen;
+            /* transform: scale(2) rotate(15deg); */
+            /* transform: rotate(40deg); */
+            /*비틀기*/
+            /* transform: skewY(-30deg); */
+            /* transform: translate(10px, 30px); */
+
+            /*이동*/
+            /* transform: translateX(10px); */
+
+            /* transform-origin: left top; 기준점 설정 */
+            /* transform-origin: 10% 50%; */
+            /* transform-origin: 100% 100%; */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Transform(CSS3) / Transition</h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto eligendi quos explicabo delectus dolore
+        ratione non quas eaque facilis reiciendis adipisci nemo aspernatur eveniet eos, molestiae, deserunt quisquam sed
+        tempora? Earum laudantium et quos recusandae voluptatibus quod perspiciatis ipsa est, impedit velit enim nisi
+        nesciunt tempora doloremque optio modi possimus. Amet quam quia, ex molestiae soluta exercitationem quod.
+        Suscipit commodi labore voluptatibus alias maxime, nesciunt, accusantium quam itaque magnam sequi culpa! Impedit
+        architecto magni sunt illo laborum soluta error beatae quod, ipsum incidunt non labore rem iure quisquam! Natus
+        molestiae ipsum perspiciatis qui obcaecati voluptate veritatis eum nihil blanditiis id!
+    </p>
+    <div class="box-container">
+        <div class="box">A</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+        <div class="box">D</div>
+        <div class="box">E</div>
+    </div>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis impedit officia aut expedita quo in cum quasi
+        beatae accusantium facere aliquam reprehenderit fugit eaque quae amet, vero et? Voluptates velit totam
+        temporibus saepe ad quas officia unde accusantium, et molestiae, excepturi molestias doloremque dignissimos.
+        Labore quod assumenda expedita impedit sapiente nam et voluptatum. Atque praesentium, consequuntur labore
+        impedit suscipit, explicabo harum perspiciatis voluptatibus dignissimos aut repellendus tempora officia. Enim
+        minus tenetur nesciunt sit vitae r epellat amet facilis obcaecati explicabo, inventore qui at quae aliquam
+        fugiat est pariatur, vero aspernatur odio, quam ullam voluptatem! Dolor, nesciunt? Consequuntur est vitae
+        accusamus doloremque?</p>
+</body>
+
+</html>
